@@ -1,0 +1,80 @@
+﻿@model IEnumerable<BeanScene1._1.Models.Reservations>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Reservations</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-danger btn-sm">
+        Create
+    </a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Firstname)</th>
+            <th>@Html.DisplayNameFor(model => model.Lastname)</th>
+            <th>@Html.DisplayNameFor(model => model.ReservationType)</th>
+            <th>@Html.DisplayNameFor(model => model.StartTime)</th>
+            <th>@Html.DisplayNameFor(model => model.Notes)</th>
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <th>Assigned Table</th>
+            <th>@Html.DisplayNameFor(model => model.AppUser.Email)</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Firstname</td>
+                <td>@item.Lastname</td>
+                <td>@item.ReservationType</td>
+                <td>@item.StartTime</td>
+                <td>@item.Notes</td>
+                <td>@item.Status</td>
+
+                <!-- ✅ ASSIGNED TABLE (FIXED) -->
+                <td>
+                    @if (item.ReservationTables != null &&
+                                    item.ReservationTables.Any() &&
+                                    item.ReservationTables.First().Table != null)
+                    {
+                        @item.ReservationTables.First().Table.TableName
+                    }
+                    else
+                    {
+                        <span class="text-muted">Not Assigned</span>
+                    }
+                </td>
+
+                <td>@item.AppUser.Email</td>
+
+                <!-- ✅ ACTION BUTTONS -->
+                <td>
+                    <a asp-action="Details"
+                       asp-route-id="@item.ReservationsId"
+                       class="btn btn-info btn-sm">
+                        Details
+                    </a>
+
+                    <a asp-action="Edit"
+                       asp-route-id="@item.ReservationsId"
+                       class="btn btn-warning btn-sm">
+                        Edit
+                    </a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@item.ReservationsId"
+                       class="btn btn-danger btn-sm">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

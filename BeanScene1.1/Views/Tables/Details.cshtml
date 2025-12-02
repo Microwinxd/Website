@@ -1,0 +1,36 @@
+﻿@model BeanScene1._1.Models.Table
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Table</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TableName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TableName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AreaName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AreaName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Areas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Areas.AreaId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.TableId" class="btn btn-warning btn-sm">Edit</a> |
+    <a asp-action="Index" class="btn btn-warning btn-sm">Back to List</a>
+</div>

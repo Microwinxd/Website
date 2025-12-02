@@ -1,0 +1,16 @@
+﻿@model BeanScene1._1.Models.Reservations
+
+<h2>Assign Table</h2>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-action="AssignTable" method="post">
+    <input type="hidden" asp-for="ReservationsId" />
+
+    <div class="form-group">
+        <label>Select Table</label>
+        <select name="tableId" class="form-control" asp-items="ViewBag.TableId"></select>
+    </div>
+
+    <br/>
+    <button type="submit" class="btn btn-primary">Assign Table</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
