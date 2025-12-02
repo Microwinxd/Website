@@ -7,6 +7,7 @@ using System.Net.Mail;
 using BeanScene1._1.Services;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using BeanScene1._1.Hubs;
+using BeanScene1._1.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +24,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options => options.SignIn.Re
     .AddDefaultUI();
 builder.Services.AddControllersWithViews();
 builder.Services.AddSignalR();
-
+builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
@@ -79,6 +80,9 @@ app.MapControllerRoute(
 app.MapHub<ChatHub>("/chathub");
 
 app.MapRazorPages();
+app.MapRazorComponents<ImageGenerator>()
+    .AddInteractiveServerRenderMode();
+
 
 
 app.Run();
