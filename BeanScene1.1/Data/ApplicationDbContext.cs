@@ -20,12 +20,6 @@ namespace BeanScene1._1.Data
                 .HasMany(t => t.Tables)
                 .WithOne(a => a.Areas)
                 .HasForeignKey(a => a.AreaId);
-                
-            
-            
-                
-                
-            
            
             modelBuilder.Entity<ReservationTable>()
             .HasKey(rt => new { rt.TableId, rt.ReservationId });
