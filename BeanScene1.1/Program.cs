@@ -80,8 +80,7 @@ app.MapControllerRoute(
 app.MapHub<ChatHub>("/chathub");
 
 app.MapRazorPages();
-app.MapRazorComponents<ImageGenerator>()
-    .AddInteractiveServerRenderMode();
+
 
 
 
