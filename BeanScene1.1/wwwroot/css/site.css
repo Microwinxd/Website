@@ -7,7 +7,8 @@ html {
 
 }
 .about-box{
-    padding: 10px;
+    margin: 10px;
+    padding: 20px;
    
 }
 .reservation-link {
@@ -17,17 +18,24 @@ html {
     display: inline-block;
     padding-bottom: 3px;
 }
+.reservation-link:hover {
+        color: #666;
+        border-bottom-color: #666;
+    }
 .container-home {
-    padding-top: 80px;
+    margin: 100px auto;
+    background-color: white;
+    width: 60%;
+    height: 600px;
     
 }
   
-}
+
 .row {
-    margin-bottom: 35px;
+    margin-bottom: 50px;
 }
 .navbar {
-    background-color: #A9A9A9;
+    background-color: white;
 }
 
 @media (min-width: 768px) {
