@@ -6,6 +6,10 @@ html {
     height: 50px;
 
 }
+.about-box{
+    padding: 10px;
+    margin-top: 30 px;
+}
 
 @media (min-width: 768px) {
   html {
