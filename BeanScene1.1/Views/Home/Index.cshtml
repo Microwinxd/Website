@@ -25,24 +25,34 @@
 else
 {
     
-    <div class="container align-content-center">
-        <div class="about-box text-center">
-            <p>EST.2024</p>
+    <div class="container-home text-center">
+        <div class="about-box">
+            EST.2024
             <h1>Bean Scene</h1>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-2">
-                text 1
+        <div class="row justify-content-center d-flex">
+            <div class="col-3 text-center">
+                Bean Scene is a small, cozy café known for its relaxed atmosphere and unexpectedly creative menu.
 
+                It serves classic café favourites with a twist, offering unique flavour combinations and seasonal specials that change regularly. Alongside quality coffee
             </div>
-            <div class="col-2">
-                text 2
+            <div class="col-3 text-center">
+                the menu is designed for those looking to try something a little different from the usual café experience.
+
+                Simple, local, and a bit unconventional—Bean Scene is all about good coffee and interesting food in a laid-back setting.
             </div>
 
         </div>
-        
-        <button class="justify-text-center">MAKE A RESERVATION</button>
+        <div class="text-center">
+
        
+            <a class="reservation-link" asp-controller="Reservations" asp-action="Index">
+                MAKE A RESERVATION
+            </a>
+
+        </div>
     </div>
+       
+    
     
 }
