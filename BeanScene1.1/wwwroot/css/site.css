@@ -1,42 +1,77 @@
 html {
   font-size: 14px;
 }
-.logo {
-    width: 50px;
-    height: 50px;
-
-}
 .about-box{
-    margin: 10px;
-    padding: 20px;
-   
+  margin-bottom: 15px;
 }
 .reservation-link {
     text-decoration: none;
-    color: black;
-    border-bottom: 2px solid black;
-    display: inline-block;
-    padding-bottom: 3px;
+    color: white;
+    border-bottom: 2px solid white;
+  
+  
 }
 .reservation-link:hover {
         color: #666;
         border-bottom-color: #666;
     }
 .container-home {
-    margin: 100px auto;
-    background-color: white;
-    width: 60%;
-    height: 600px;
+    background-color: #567C8D;
+    padding: 20px;
+    width: 99%;
+    min-height:1000vh;
+    box-sizing: border-box;
+    
     
 }
-  
+.dropdown-toggle::after{
+    display: none;
+}
+.menu-icon {
+    background-color: #567C8D;
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    color: white;
+}
+.dropdown-toggle:hover {
+        color: #666;
+}
+.dropdown-item:hover {
+    color: #666;
+}
+.dropdown-item{
+    padding-top:5px;
+    padding-bottom:10px;
+    user-select: none;
+    
+    
+}
+.name{
+    color: white;
+}
+.reservations-link{
+    color: white;
+}
+.container-text {
+    color: white
+}
+
 
 .row {
     margin-bottom: 50px;
 }
 .navbar {
-    background-color: white;
+    background-color: #567C8D;
+    border-color: #O83A4F;
 }
+.name:hover {
+    color: #666;
+}
+.reservations-link:hover{
+    color:#666;
+}
+
 
 @media (min-width: 768px) {
   html {
@@ -52,32 +87,33 @@ html, body {
     height: 100%;
     margin: 0;
 }
-body { 
+body {
     display: flex;
     flex-direction: column;
-    background: #A9A9A9;
+    background: white;
 }
 .container {
     flex: 1;
     
 }
 .footer {
-
     display: flex;
     justify-content: flex-start;
     height: 40px;
-    align-content: center
+    align-content: center;
+    background-color: #567C8D
 }
 .footer h6{
     padding-top: 10px;
     position: relative;
+    color:white;
     
     
 }
 
 main {
     flex: 1;
-    margin-top: 70px;
+    margin-top: 65px;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
