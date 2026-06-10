@@ -2,6 +2,7 @@ html {
   font-size: 14px;
 }
 .about-box{
+    margin-top: 200px;
   margin-bottom: 15px;
 }
 .reservation-link {
@@ -18,10 +19,11 @@ html {
 .container-home {
     background-color: #567C8D;
     padding: 20px;
-    width: 99%;
+    width: 98%;
     min-height:1000vh;
     box-sizing: border-box;
-    
+    margin: 0 auto;
+    margin-bottom:3px;
     
 }
 .dropdown-toggle::after{
@@ -88,7 +90,6 @@ html, body {
     margin: 0;
 }
 body {
-    display: flex;
     flex-direction: column;
     background: white;
 }
@@ -101,7 +102,11 @@ body {
     justify-content: flex-start;
     height: 40px;
     align-content: center;
-    background-color: #567C8D
+    background-color: #567C8D;
+    bottom: 0;
+    width:100%;
+    
+    
 }
 .footer h6{
     padding-top: 10px;
@@ -113,7 +118,7 @@ body {
 
 main {
     flex: 1;
-    margin-top: 65px;
+    
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
