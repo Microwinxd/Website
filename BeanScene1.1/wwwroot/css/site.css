@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Amagro';
+    src: local("Amagro.ttf") format('truetype');
+    font-family: 'Telegraf';
+    src: local("Telegraf UltraBold 800") format('truetype';)
+}
 html {
   font-size: 14px;
 }
@@ -58,8 +64,17 @@ html {
 .container-text {
     color: white
 }
-
-
+.menu-container {
+    margin-top: 80px;
+    
+    
+}
+.menu-page {
+    background-color: #FAF3E0;
+}
+.home-page {
+    background-color: #FAF3E0;
+}
 .row {
     margin-bottom: 50px;
 }
@@ -73,12 +88,76 @@ html {
 .reservations-link:hover{
     color:#666;
 }
+.menu-headers {
+    margin-bottom: 50px;
+    padding: 10px;
+    border-bottom: 3px solid #024059;
+    font-size: 40px;
+    font-family: Telegraf;
+    font-weight: bold;
+    color:  #024059;
+
+}
+.menu-list {
+    display: flex;
+    flex-wrap:wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    width: 100%;
+    
+   
+}
+    .menu-list li {
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        width:250px;
+        padding:10px;
+        border: 1px;
+        
+    }
+.menu-text{
+    font-family:Amagro;
+    font-size: 20px;
+    color:#455763;
+    font-weight:lighter;
+    
+    
+    width : 75%;
+}
+.Main-Course{
+    margin-top: 30px;
+}
+.dots {
+    flex-grow: 1;
+    height: 16px;
+    margin: 0 10px;
+    background-image: radial-gradient(circle, #999 1px, transparent 1px);
+    background-size: 4px 4px;
+    background-repeat: repeat-x;
+    background-position: left 12px;
+}
+.Price {
+    font-weight: lighter;
+    font-family: Amagro;
+    font-size: 25px;
+    color: #455763;
+}
+.item-name {
+    font-family: Amagro;
+    font-size: 25px;
+    font-weight: lighter;
+    color: #455763;
+}
+
 
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -105,6 +184,7 @@ body {
     background-color: #567C8D;
     bottom: 0;
     width:100%;
+    margin-top: 40px;
     
     
 }
