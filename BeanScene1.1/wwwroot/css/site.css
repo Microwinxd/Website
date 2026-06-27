@@ -87,9 +87,32 @@ html {
 .register-form{
     padding-top: 20px;
 }
-.register-button {
-    background-color: #567C8D;
-
+.login-labels {
+    color: #455763;
+    font-family: Amagro;
+}
+.login-text {
+    font-family: Amagro;
+    font-weight: bold;
+    color: #024059;
+}
+.login-form {
+    padding-top: 20px;
+}
+.login-link {
+    font-family: Amagro;
+    font-weight: bold;
+    color: #024059;
+    font-size: 15px;
+}
+.login-external-links{
+    margin-top: 20px;
+    padding: 5px;
+}
+.form-label {
+    color: #024059;
+    font-weight: bold;
+    font-family: Amagro;
 }
 .container-text {
     color: white

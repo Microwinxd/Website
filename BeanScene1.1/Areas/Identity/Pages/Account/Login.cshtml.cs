@@ -66,14 +66,14 @@ namespace BeanScene101._1.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             /// 
-            [Required]
+            [Required(ErrorMessage ="Please enter your login")]
             public string AppUserName { get; set; }
             
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required(ErrorMessage ="Please enter your password")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
