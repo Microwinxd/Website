@@ -23,7 +23,7 @@ html {
         border-bottom-color: #666;
     }
 .container-home {
-    background-color: #567C8D;
+    
     padding: 20px;
     width: 98%;
     min-height:1000vh;
@@ -61,13 +61,43 @@ html {
 .reservations-link{
     color: white;
 }
+.reservation-link-home {
+    font-size: 25px;
+    font-family: Telegraf;
+    font-weight: bold;
+    color: #024059;
+}
+.reservation-link-home:hover {
+    color: grey;
+    border-bottom-color: grey;
+}
+.placeholder {
+    color: #455763;
+    font-family: Amagro;
+}
+.register-labels {
+    color: #455763;
+    font-family: Amagro;
+}
+.register-text {
+    font-family: Amagro;
+    font-weight: bold;
+    color: #024059;
+}
+.register-form{
+    padding-top: 20px;
+}
+.register-button {
+    background-color: #567C8D;
+
+}
 .container-text {
     color: white
 }
+
+
 .menu-container {
     margin-top: 80px;
-    
-    
 }
 .menu-page {
     background-color: #FAF3E0;
@@ -122,9 +152,7 @@ html {
     font-family:Amagro;
     font-size: 20px;
     color:#455763;
-    font-weight:lighter;
-    
-    
+    font-weight:lighter; 
     width : 75%;
 }
 .Main-Course{
@@ -152,6 +180,28 @@ html {
     color: #455763;
 }
 
+.home-page {
+    background-color: #FAF3E0;
+}
+.Home-page-name {
+    font-size: 40px;
+    font-family: Telegraf;
+    font-weight: bold;
+    color: #024059;
+}
+.home-page-text {
+    font-family: Amagro;
+    font-size: 20px;
+    color: #455763;
+    font-weight: lighter;
+  
+}
+.reservation-button {
+    font-size: 40px;
+    font-family: Telegraf;
+    font-weight: bold;
+    color: #024059;
+}
 
 
 @media (min-width: 768px) {
@@ -163,6 +213,22 @@ html {
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
+.btn-primary {
+    border: none;
+    box-shadow: none;
+    background-color: #567C8D;
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary:active:focus {
+        background-color: #455763;
+        transform: none;
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
 
 html, body {
     height: 100%;
