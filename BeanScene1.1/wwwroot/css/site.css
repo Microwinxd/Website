@@ -302,10 +302,21 @@ body {
     
     
 }
+.nav-bar-logout {
+    background: none;
+    border: none;
+    background-color: transparent;
+    
+    margin: 0;
+    font: inherit; 
+    color: white; 
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
 
 main {
     flex: 1;
-    
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
