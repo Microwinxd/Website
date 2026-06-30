@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="~/BeanScene1._1.styles.css" asp-append-version="true" />
 </head>
 <body>
+   <div class="site-grid"> 
     <header>
         <nav class="navbar fixed-top navbar-expand-sm box-shadow">
             <div class="container-fluid ">
@@ -22,27 +23,9 @@
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link"  asp-area="" asp-controller="Home" asp-action="Menu">Menu</a></li>
                                 <li><a class="dropdown-item">About us</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item position-absolute top-50 start-50 translate-middle">
-                        <a class="navbar-brand name" asp-area="" asp-controller="Home" asp-action="Index">Bean Scene</a>
-                    </li>
-                    <li class="nav-item ms-auto">
-                        <a class="nav-link reservations-link" asp-area="" asp-controller="Reservations" asp-action="Index">Make a Reservation</a>
-                    </li>
-                </ul>
-                    
-                    
-            </div>  
-               
-
-    
-                        
-                        @if (User.IsInRole("Admin"))
-                        {   
-                            
-                            <li class="nav-item">
+                                    @if (User.IsInRole("Admin"))
+                                        {
+                                            <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Areas" asp-action="Index">Areas</a>
                             </li>
                             <li class="nav-item">
@@ -57,27 +40,38 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="Index">Reports</a>
                             </li>
-                           
-                        }
-                        @if (User.IsInRole("Staff"))
-                        {
-                             
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Areas" asp-action="Index">Areas</a>
-                            </li>
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Tables" asp-action="Index">Tables</a>
-                            </li>
-                            
-                        }
+                                          
+                                        }
+                                    @if (User.IsInRole("Staff"))
+                                    {
 
-                        
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Areas" asp-action="Index">Areas</a>
+                                        </li>
+
+                            
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Tables" asp-action="Index">Tables</a>
+                                        </li>
+
+                                    }
+                                    </ul>
+
+                        </div>
+                    </li>
+                    <li class="nav-item position-absolute top-50 start-50 translate-middle">
+                        <a class="navbar-brand name" asp-area="" asp-controller="Home" asp-action="Index">Bean Scene</a>
+                    </li>
+                    <li class="nav-item ms-auto">
+                        <a class="nav-link reservations-link" asp-area="" asp-controller="Reservations" asp-action="Index">Make a Reservation</a>
+                    </li>
+                </ul>
                     
                     
+            </div>  
+         
                     <partial name="_LoginPartial" />
-                </div>
+                
         </nav>
     </header>
     <div class="container-fluid p-0">
@@ -91,10 +85,13 @@
            <h6> &copy; 2025 - BeanScene</h6>
         </div>
     </footer>
+    </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="_framework/blazor.server.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
+   
 </body>
 </html>
