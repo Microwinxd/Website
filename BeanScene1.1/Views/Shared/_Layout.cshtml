@@ -15,97 +15,38 @@
 </head>
 <body>
 
-
-
-
    <div class="site-grid"> 
     <header>
      <nav class="navbar fixed-top navbar-expand-sm box-shadow">
       <div class="container-fluid ">
-                
-                    @if (SignInManager.IsSignedIn(User)
-                        {
-                            <ul class="navbar-nav w-100 d-flex flex-row align-items-center">
-                                <li class="nav-item">
-                                    <div class="dropdown">
+                    
+      <ul class="navbar-nav w-100 d-flex flex-row align-items-center">
+       <li class="nav-item">
+        <div class="dropdown">
 
-                                        <button class="dropdown-toggle menu-icon" type="button" data-bs-toggle="dropdown">
-                                            ☰
-                                        </button>
+         <button class="dropdown-toggle menu-icon" type="button" data-bs-toggle="dropdown">
+          ☰
+          </button>
 
-                                        <ul class="dropdown-menu">
-                                            <li><a class="nav-link"  asp-area="" asp-controller="Home" asp-action="Menu">Menu</a></li>
-                                           
-                                            @if (User.IsInRole("Admin"))
-                                            {
-                                                <li class="nav-item">
-                                                    <a class="nav-link text-dark" asp-area="" asp-controller="Areas" asp-action="Index">Areas</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link text-dark" asp-area="" asp-controller="Tables" asp-action="Index">Tables</a>
-                                                </li> 
-                                                <li class="nav-item">
-                                                    <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Manage Staff</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="Index">Reports</a>
-                                                </li>
-                                                <li>
-                                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                                                    <button type="submit" class="nav-bar-logout text-dark">Logout</button>
-                                                </form>
-                                                </li>
-                                            }
-                                            @if (User.IsInRole("Staff"))
-                                            {
-                                                <li class="nav-item">
-                                                    <a class="nav-link text-dark" asp-area="" asp-controller="Areas" asp-action="Index">Areas</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link text-dark" asp-area="" asp-controller="Tables" asp-action="Index">Tables</a>
-                                                </li>
+         <ul class="dropdown-menu">
+            <li><a class="nav-link"  asp-area="" asp-controller="Home" asp-action="Menu">Menu</a></li>
+                                              
+          </ul>
 
-                                            }
-                                        </ul>
+         </div>
 
-                                    </div>
-
-                                </li>
-                                <li class="nav-item position-absolute top-50 start-50 translate-middle">
-                                    <a class="navbar-brand name" asp-area="" asp-controller="Home" asp-action="Index">Bean Scene</a>
-                                </li>
-                                <li class="nav-item ms-auto">
-                                    <a class="nav-link reservations-link" asp-area="" asp-controller="Reservations" asp-action="Index">Make a Reservation</a>
-                                </li>
-                            </ul>
-
-                        }
-
-                        else
-                        {
-
-                            <ul class="navbar-nav w-100 d-flex flex-row align-items-center">
-
-                            <button class="dropdown-toggle menu-icon" type="button" data-bs-toggle="dropdown">
-                                ☰
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Menu">Menu</a></li>
-                                <li><a class="dropdown-item">About us</a></li>
-                            </ul>
-
-                        <li class="nav-item position-absolute top-50 start-50 translate-middle">
-                            <a class="navbar-brand name" asp-area="" asp-controller="Home" asp-action="Index">Bean Scene</a>
-                        </li>
-                        <li class="nav-item ms-auto">
-                            <a class="nav-link reservations-link" asp-area="" asp-controller="Reservations" asp-action="Index">Make a Reservation</a>
-                        </li>
-                        </ul>
-                        }
-                        
-                    </div>  
+       </li>
+         <li class="nav-item position-absolute top-50 start-50 translate-middle">
+            <a class="navbar-brand name" asp-area="" asp-controller="Home" asp-action="Index">Bean Scene</a>
+          </li>
+         <li class="nav-item ms-auto">
+           <a class="nav-link reservations-link" asp-area="" asp-controller="Reservations" asp-action="Index">Make a Reservation</a>
+         </li>
+        </ul>
+                  
+      </div>  
          
-                    <partial name="_LoginPartial" />
+       <partial name="_LoginPartial" />
                 
         </nav>
     </header>
