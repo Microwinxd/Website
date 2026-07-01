@@ -8,7 +8,7 @@ html {
   font-size: 14px;
 }
 .about-box{
-    margin-top: 200px;
+  margin-top: 20px;
   margin-bottom: 15px;
 }
 .reservation-link {
@@ -22,16 +22,7 @@ html {
         color: #666;
         border-bottom-color: #666;
     }
-.container-home {
-    
-    padding: 20px;
-    width: 98%;
-    min-height:1000vh;
-    box-sizing: border-box;
-    margin: 0 auto;
-    margin-bottom:3px;
-    
-}
+
 .dropdown-toggle::after{
     display: none;
 }
@@ -314,7 +305,12 @@ body {
     text-decoration: none;
     transition: color 0.15s ease-in-out;
 }
-
+.text-home{
+    margin-top:80px;
+    font-family: Amagro;
+    font-weight: bold;
+   
+}
 main {
     flex: 1;
 }

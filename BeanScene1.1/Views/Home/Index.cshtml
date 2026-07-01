@@ -3,24 +3,45 @@
 }
 
 @if (User.Identity != null && User.Identity.IsAuthenticated)
-{
-   
-    <div class="text-center">
-        <h1 class="display-4">Welcome Back!</h1>
+{<body class="home-page">
+       
+       <div class="container-fluid">
+            <div class="container-fluid text-center">
+                <div class="about-box container-text ">
+                    
+                    <p class="home-page-text"> EST.2024 </p>
+                    <h1 class="Home-page-name">Bean Scene</h1>
 
-        <div class="mt-4">
-            <a asp-controller="Reservations" asp-action="Create"
-               class="btn btn-primary btn-lg me-3">
-                Make a Reservation
-            </a>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-3 container-text text-center">
+                        <p class="home-page-text">
+                            Bean Scene is a small, cozy café known for its relaxed atmosphere and unexpectedly creative menu.
 
-            <a asp-controller="Reservations" asp-action="Index"
-               class="btn btn-success btn-lg">
-                My Reservations
-            </a>
+                            It serves classic café favourites with a twist, offering unique flavour combinations and seasonal specials that change regularly. Alongside quality coffee
+                        </p>
+
+                    </div>
+                    <div class="col-3 container-text text-center">
+                        <p class="home-page-text">
+                            the menu is designed for those looking to try something a little different from the usual café experience.
+
+                            Simple, local, and a bit unconventional—Bean Scene is all about good coffee and interesting food in a laid-back setting.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="text-center">
+                    <a class="reservation-link-home" asp-controller="Reservations" asp-action="Index">
+                        <p>
+                            MAKE A RESERVATION
+                        </p>
+                    </a>
+
+                </div>
+            </div>
         </div>
-    </div>
-
+    </body>
 }
 else
 {<body class="home-page">
