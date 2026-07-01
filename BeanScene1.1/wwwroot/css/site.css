@@ -18,10 +18,33 @@ html {
   
   
 }
+.reservation-headers {
+    background-color: grey;
+    color: white;
+   border-inline: 1px solid;
+    text-align: center;
+
+}
+.reservation-items {
+    background-color: white;
+    text-align: center;
+    border: 1px solid;
+
+}
+.reservation-table{
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+.reservation-table th,td{
+    border: 1px solid;
+}
 .reservation-link:hover {
-        color: #666;
-        border-bottom-color: #666;
-    }
+    color: #666;
+    border-bottom-color: #666;
+}
+
 
 .dropdown-toggle::after{
     display: none;

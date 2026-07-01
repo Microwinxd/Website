@@ -3,42 +3,40 @@
 @{
     ViewData["Title"] = "Index";
 }
+<body class="home-page">
 
 <h1>Reservations</h1>
 
-<p>
-    <a asp-action="Create" class="btn btn-danger btn-sm">
+<a asp-action="Create" class=" btn btn-lg btn-primary">
         Create
     </a>
-</p>
 
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
+
+<table class="reservation-table">
+    
+        <tr class="reservation-headers">
             <th>@Html.DisplayNameFor(model => model.Firstname)</th>
             <th>@Html.DisplayNameFor(model => model.Lastname)</th>
             <th>@Html.DisplayNameFor(model => model.ReservationType)</th>
-            <th>@Html.DisplayNameFor(model => model.StartTime)</th>
             <th>@Html.DisplayNameFor(model => model.Notes)</th>
             <th>@Html.DisplayNameFor(model => model.Status)</th>
             <th>Assigned Table</th>
             <th>@Html.DisplayNameFor(model => model.AppUser.Email)</th>
-            <th></th>
+            <th>Options</th>
         </tr>
-    </thead>
+    
 
-    <tbody>
+    
         @foreach (var item in Model)
         {
-            <tr>
+            <tr class="reservation-items">
                 <td>@item.Firstname</td>
                 <td>@item.Lastname</td>
                 <td>@item.ReservationType</td>
-                <td>@item.StartTime</td>
                 <td>@item.Notes</td>
                 <td>@item.Status</td>
 
-                <!-- ✅ ASSIGNED TABLE (FIXED) -->
+                
                 <td>
                     @if (item.ReservationTables != null &&
                                     item.ReservationTables.Any() &&
@@ -58,23 +56,21 @@
                 <td>
                     <a asp-action="Details"
                        asp-route-id="@item.ReservationsId"
-                       class="btn btn-info btn-sm">
+                       class="btn btn-sm btn-primary">
                         Details
                     </a>
 
-                    <a asp-action="Edit"
-                       asp-route-id="@item.ReservationsId"
-                       class="btn btn-warning btn-sm">
-                        Edit
-                    </a>
+                    
 
                     <a asp-action="Delete"
                        asp-route-id="@item.ReservationsId"
-                       class="btn btn-danger btn-sm">
+                       class="btn btn-sm btn-primary">
                         Delete
                     </a>
                 </td>
             </tr>
         }
-    </tbody>
+    
 </table>
+
+</body>
