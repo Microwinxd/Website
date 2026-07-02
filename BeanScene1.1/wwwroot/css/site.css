@@ -32,10 +32,12 @@ html {
 
 }
 .reservation-table{
-    margin-top: 20px;
-    width: 100%;
+    margin-top: 10px;
+    width: 99%;
     border: 1px solid;
     border-collapse: collapse;
+    margin-left: 5px
+    
 }
 .reservation-table th,td{
     border: 1px solid;
@@ -243,7 +245,15 @@ html {
     font-weight: bold;
     color: #024059;
 }
-
+.create-reservation {
+    margin-top: 20px;
+    margin-left: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-family: Telegraf;
+    background-color: #024059;
+    color: white;
+}
 
 @media (min-width: 768px) {
     html {

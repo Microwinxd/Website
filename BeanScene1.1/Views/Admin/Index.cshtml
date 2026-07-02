@@ -1,19 +1,19 @@
 ﻿@using static BeanScene1._1.ViewModels.AdminViewModels
 @model List<UserRolesViewModel>
-
+<body>
     <h2>Users</h2>
-    <table class="table">
-        <thead>
-            <tr>
+    <table class="reservation-table">
+        
+        <tr class="reservation-headers">
                 <th>Email</th>
                 <th>Roles</th>
                 <th>Actions</th>
             </tr>
-        </thead>
-    <tbody> </tbody>
+        
+   
             @foreach (var user in Model)
                 {
-                    <tr>
+            <tr class="reservation-items">
                 <td>@user.Email</td>
                 <td>@string.Join(",", user.Roles)</td>
                 <td>
@@ -21,5 +21,6 @@
                 </td>
             </tr>
         }
-    </tbody>
+    
     </table>
+</body>
