@@ -7,6 +7,7 @@ namespace BeanScene1._1.Data
 {
     public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
+        public DbSet<BeanScene1._1.Models.Menu> Menu { get; set; } = default!;
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

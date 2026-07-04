@@ -1,47 +1,59 @@
 @model IEnumerable<BeanScene1._1.Models.Menu>
-
 @{
-    ViewData["Title"] = "Index";
-}
+    ViewData["Title"] = "Menu";
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemPrice)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(model => item.ItemName)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.ItemType)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.ItemPrice)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.MenuId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MenuId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MenuId">Delete</a>
-            </td>
-        </tr>
 }
-    </tbody>
-</table>
+<body class="menu-page">
+    <div class="container menu-container">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <h1 class="menu-headers">Our Menu</h1>
+            <p class="menu-text">Freshly prepared dishes and drinks made with quality ingredients, served in a cozy and relaxed setting. Perfect for a quick bite, coffee break, or a casual meal with friends.</p>
+        </div>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <h1 class="menu-headers">Breakfast</h1>
+
+            <ul class="menu-list">
+                @foreach (var item in (Model ?? new List<Menu>()).Where(m => m.ItemType == "Breakfast"))
+                {
+                    <li class="d-flex">
+                        <span class="item-name">@item.ItemName</span>
+                        <span class="dots"></span>
+                        <span class="Price">@item.ItemPrice</span>
+                    </li>
+                }
+            </ul>
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center Main-Course">
+                <h1 class="menu-headers">Lunch</h1>
+                <ul class="menu-list">
+                    @foreach (var item in (Model ?? new List<Menu>()).Where(m => m.ItemType == "Lunch"))
+                    {
+                        <li class="d-flex">
+                            <span class="item-name">@item.ItemName</span>
+                            <span class="dots"></span>
+                            <span class="Price">@item.ItemPrice</span>
+                        </li>
+                    }
+                </ul>
+
+
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center Main-Course">
+                <h1 class="menu-headers">Dinner</h1>
+                <ul class="menu-list">
+                    
+                    @foreach (var item in (Model ?? new List<Menu>()).Where(m => m.ItemType == "Dinner"))
+                    {
+                        <li class="d-flex">
+                            <span class="item-name">@item.ItemName</span>
+                            <span class="dots"></span>
+                            <span class="Price">@item.ItemPrice</span>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+        
+        </div>
+
+</body>
