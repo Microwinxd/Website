@@ -15,6 +15,15 @@ public class MenuController : Controller
 
     // GET: MENUS
     public async Task<IActionResult> Index()
+
+    {
+        var menus = await _context.Menus.ToListAsync();
+        return View(menus);
+
+    }
+
+    // User version
+    public async Task<IActionResult> WebsiteMenu()
     {
         var menus = await _context.Menu.ToListAsync();
 
@@ -118,34 +127,39 @@ public class MenuController : Controller
     }
 
     // GET: MENUS/Delete/5
-    public async Task<IActionResult> Delete(int? menuid)
+    public async Task<IActionResult> Delete(int? id)
     {
-        if (menuid == null)
+        if (id == null)
+        {
+            return NotFound();
+        }
+        Menu? menus;
+
+
+         menus = await _context.Menu
+            .FirstOrDefaultAsync(m => m.MenuId == id);
+        if (menus == null)
         {
             return NotFound();
         }
 
-        var menu = await _context.Menu
-            .FirstOrDefaultAsync(m => m.MenuId == menuid);
-        if (menu == null)
-        {
-            return NotFound();
-        }
-
-        return View(menu);
+        return View(menus);
     }
 
     // POST: MENUS/Delete/5
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int? menuid)
+    public async Task<IActionResult> DeleteConfirmed(int? id)
     {
-        var menu = await _context.Menu.FindAsync(menuid);
-        if (menu != null)
-        {
-            _context.Menu.Remove(menu);
-        }
+        Menu? menus;
 
+         menus = await _context.Menu.FindAsync(id);
+        if (menus == null)
+        
+            return NotFound();
+
+
+        _context.Menu.Remove(menus);
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
     }

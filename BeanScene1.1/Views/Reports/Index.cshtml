@@ -1,76 +1,84 @@
 ﻿@model BeanScene1._1.Models.Report
-
+<body class="home-page"> 
 <h1>Reservation Report Dashboard</h1>
 
-<!-- ✅ STATUS TOTALS -->
-<h3 class="mt-4">Overall Status Totals</h3>
 
-<table class="table table-bordered text-center">
-    <tr class="table-dark">
-        <th>Total</th>
-        <th>Completed</th>
-        <th>Pending / Confirmed</th>
-        <th>Cancelled</th>
-    </tr>
-    <tr>
-        <td>@Model.TotalReservations</td>
-        <td class="text-success fw-bold">@Model.Completed</td>
-        <td class="text-warning fw-bold">@Model.PendingOrConfirmed</td>
-        <td class="text-danger fw-bold">@Model.Cancelled</td>
-    </tr>
-</table>
+<form method="get">
+    <select name="reportType" onchange="this.form.submit()">
+        <option value="Time"
+            selected="@(ViewBag.ReportType =="Time")">
+            Time-Based Reservations
+        </option>
 
-<!-- ✅ TIME-BASED TOTALS -->
-<h3 class="mt-5">Time-Based Reservations</h3>
-
-<table class="table table-bordered text-center">
-    <tr class="table-primary">
-        <th>Today</th>
-        <th>This Week</th>
-        <th>This Month</th>
-    </tr>
-    <tr>
-        <td class="fw-bold">@Model.TodayReservations</td>
-        <td class="fw-bold">@Model.ThisWeekReservations</td>
-        <td class="fw-bold">@Model.ThisMonthReservations</td>
-    </tr>
-</table>
-
-<!-- ✅ UPCOMING / OVERDUE -->
-<h3 class="mt-5">System Status</h3>
-
-<table class="table table-bordered text-center">
-    <tr class="table-warning">
-        <th>Upcoming Reservations</th>
-        <th>Overdue / Past Reservations</th>
-    </tr>
-    <tr>
-        <td class="fw-bold text-primary">
-            @Model.UpcomingReservations
-        </td>
-        <td class="fw-bold text-danger">
-            @Model.OverdueReservations
-        </td>
-    </tr>
-</table>
-<h3 class="mt-5">Reservation Types</h3>
-
-<table class="table table-bordered text-center">
-    <tr class="table-info">
-        <th>Breakfast</th>
-        <th>Lunch</th>
-        <th>Dinner</th>
-    </tr>
-    <tr>
-        <td>@Model.Breakfast</td>
-        <td>@Model.Lunch</td>
-        <td>@Model.Dinner</td>
-    </tr>
-</table>
+        <option value="Status"
+            selected="@(ViewBag.ReportType == "Status")">
+            Status
+        </option>
+        <option value="ReservationType"
+                selected="@(ViewBag.ReportType == "ReservationType")">
+            Reservation Type
+        </option>
+        
+    </select>
+</form>
 
 
-<div class="mt-4">
-    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">
-        Back to Home
-    </a>
-</div>
+@if (ViewBag.ReportType == "Time")
+{
+    <h3 class="mt-5 Time-Based Reservations">Time-Based Reservations</h3>
+
+    <table class="reservation-table" text-center">
+        <tr class="reservation-headers">
+            <th>Today</th>
+            <th>This Week</th>
+            <th>This Month</th>
+        </tr>
+        <tr class="reservation-items">
+            <td>@Model.TodayReservations</td>
+            <td>@Model.ThisWeekReservations</td>
+            <td>@Model.ThisMonthReservations</td>
+        </tr>
+    </table>
+}
+
+@if (ViewBag.ReportType == "Status")
+{
+    <!-- ✅ UPCOMING / OVERDUE -->
+    <h3 class="mt-5">System Status</h3>
+
+    <table class="reservation-table" text-center">
+        <tr class="reservation-headers">
+            <th>Upcoming Reservations</th>
+            <th>Overdue / Past Reservations</th>
+        </tr>
+        <tr class="reservation-items">
+            <td>
+                @Model.UpcomingReservations
+            </td>
+            <td>
+                @Model.OverdueReservations
+            </td>
+        </tr>
+    </table>
+}
+
+@if (ViewBag.ReportType == "ReservationType")
+{
+    <h3 class="mt-5">Reservation Types</h3>
+
+    <table class="reservation-table" text-center">
+        <tr class="reservation-headers">
+            <th>Breakfast</th>
+            <th>Lunch</th>
+            <th>Dinner</th>
+        </tr>
+        <tr class="reservation-items">
+            <td>@Model.Breakfast</td>
+            <td>@Model.Lunch</td>
+            <td>@Model.Dinner</td>
+        </tr>
+    </table>
+}
+
+
+</body>

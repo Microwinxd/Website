@@ -47,6 +47,7 @@ namespace BeanScene1._1.Data
         public DbSet<Table> Tables { get; set; }
 
         public DbSet<Reservations> Reservations { get; set; } = default!;
+        public DbSet<Menu> Menus { get; set; } = default!;
 
         public DbSet<ReservationTable> ReservationTables { get; set; } = default!;
         public DbSet<BeanScene1._1.Models.Report> Report { get; set; } = default!;
