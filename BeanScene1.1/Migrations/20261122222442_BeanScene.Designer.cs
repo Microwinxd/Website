@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BeanScene1._1.Data.Migrations
+namespace BeanScene1._1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260704052151_MenuTable")]
-    partial class MenuTable
+    [Migration("20261122222442_BeanScene")]
+    partial class BeanScene
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
