@@ -81,7 +81,7 @@ html {
     font-size: 25px;
     font-family: Telegraf;
     font-weight: bold;
-    color: #024059;
+    color: white;
 }
 .reservation-link-home:hover {
     color: grey;
@@ -143,10 +143,12 @@ html {
     margin-top: 80px;
 }
 .menu-page {
-    background-color: #FAF3E0;
+    width:100%;
+    height:100%;
+  
 }
 .home-page {
-    background-color: #FAF3E0;
+    background-color: #567C8D;
 }
 .row {
     margin-bottom: 50px;
@@ -162,13 +164,16 @@ html {
     color:#666;
 }
 .menu-headers {
-    margin-bottom: 50px;
+    width: fit-content;
+    margin: 0 auto 50px auto;
     padding: 10px;
     border-bottom: 3px solid #024059;
     font-size: 40px;
     font-family: Telegraf;
     font-weight: bold;
-    color:  #024059;
+    color: white;
+    text-align: center;
+}
 
 }
 .menu-list {
@@ -192,13 +197,22 @@ html {
         
     }
 .menu-text{
+    display:flex;
+
     font-family:Amagro;
     font-size: 20px;
-    color:#455763;
+    color:white;
     font-weight:lighter; 
-    width : 75%;
+    justify-content:center;
 }
-.Main-Course{
+.menu-class {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    text-align: center;
+}
+.Main-Course {
     margin-top: 30px;
 }
 .dots {
@@ -223,19 +237,17 @@ html {
     color: #455763;
 }
 
-.home-page {
-    background-color: #FAF3E0;
-}
+
 .Home-page-name {
     font-size: 40px;
     font-family: Telegraf;
     font-weight: bold;
-    color: #024059;
+    color: white;
 }
 .home-page-text {
     font-family: Amagro;
     font-size: 20px;
-    color: #455763;
+    color: white;
     font-weight: lighter;
   
 }
@@ -243,7 +255,7 @@ html {
     font-size: 40px;
     font-family: Telegraf;
     font-weight: bold;
-    color: #024059;
+    color: white;
 }
 .create-reservation {
     margin-top: 20px;
@@ -251,7 +263,7 @@ html {
     text-align: center;
     font-size: 20px;
     font-family: Telegraf;
-    background-color: #024059;
+    background-color: white;
     color: white;
 }
 
@@ -287,19 +299,17 @@ html, body {
 }
 body {
     flex-direction: column;
-    background: white;
+    background: #567C8D;
 }
 .container {
     flex: 1;
     
 }
 .footer {
-    height: 40px;
-    align-content: center;
-    background-color: #567C8D;
-    width: 100%;
-    margin-top: 40px;
- 
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-align: left;
 }
 .text-forgot-password {
     padding-top: 50px;
@@ -320,11 +330,10 @@ body {
     grid-template-columns: minmax(0,1fr);
 }
 .footer h6{
-    padding-top: 10px;
-    position: relative;
+    
+   
     color:white;
-    
-    
+      
 }
 .nav-bar-logout {
     background: none;
@@ -366,4 +375,45 @@ main {
     overflow-y: scroll;
     background: #f8f9fa;
     border-radius: 8px;
+}
+.container-home {
+    padding-top: 300px;
+}
+.home-row {
+    
+    display: flex;
+    justify-content: center
+}
+.header {
+    background-color: #567C8D;
+}
+
+.header-nav {
+  position:relative;
+}
+.header-nav li {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size:20px;
+}
+.header-nav {
+    list-style: none;
+    
+}
+
+.header-nav a {
+        text-decoration: none;
+        color: white;
+    }
+
+.middle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container-menu-items {
+    padding-top: 10%;
+    width: 100%;
+    margin: 0 auto;
 }

@@ -15,40 +15,21 @@
 </head>
 <body>
 
-   <div class="site-grid"> 
-    <header>
-     <nav class="navbar fixed-top navbar-expand-sm box-shadow">
-      <div class="container-fluid ">
-                    
-      <ul class="navbar-nav w-100 d-flex flex-row align-items-center">
-       <li class="nav-item">
-        <div class="dropdown">
-
-         <button class="dropdown-toggle menu-icon" type="button" data-bs-toggle="dropdown">
-          ☰
-          </button>
-
-         <ul class="dropdown-menu">
-           <li><a class="nav-link" asp-area="" asp-controller="Menu" asp-action="WebsiteMenu">Menu</a></li>
-                                      
-          </ul>
-
-         </div>
-
-       </li>
-         <li class="nav-item position-absolute top-50 start-50 translate-middle">
-            <a class="navbar-brand name" asp-area="" asp-controller="Home" asp-action="Index">Bean Scene</a>
+   <div > 
+    <header>             
+     <ul class="header-nav">
+         <li class="middle" >
+            <a asp-controller="Home" asp-action="Index">Bean Scene</a>
           </li>
-         <li class="nav-item ms-auto">
-           <a class="nav-link reservations-link" asp-area="" asp-controller="Reservations" asp-action="Index">Make a Reservation</a>
+          <li style="float:right">
+           <a asp-controller="Reservations" asp-action="Index">Make a Reservation</a>
          </li>
-        </ul>
-                  
-      </div>  
+          <li style="float:right">
+             <a asp-controller="Menu" asp-action="WebsiteMenu">Menu</a>
+          </li> 
          
+        </ul>         
        <partial name="_LoginPartial" />
-                
-        </nav>
     </header>
     <div class="container-fluid p-0">
         <main role="main" class="pb-3">
